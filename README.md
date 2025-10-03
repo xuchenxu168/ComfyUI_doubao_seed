@@ -1624,38 +1624,66 @@ python diagnose_comic_parsing.py
 
 ---
 
-## 💝 Support the Project
-<div align="center">
+## 💖 Support the Project
+
 ### ☕ Buy Me a Coffee
-If you find doubao_seed helpful and it has made your voice synthesis projects easier, consider supporting the development!
-**🎯 Your support helps:**
-- 🚀 Accelerate new feature development
-- 🧠 Enhance AI capabilities
-- 🔧 Improve system stability
-- 📚 Create better documentation
-- 🌍 Support the open-source community
-</div>
-<table>
-<tr>
-<td width="50%" align="center">
-**💬 WeChat Contact**
-<img src="https://github.com/xuchenxu168/images/blob/main/%E5%BE%AE%E4%BF%A1%E5%8F%B7.jpg" alt="WeChat QR Code" width="200" height="200">
-*Scan to add WeChat*
-*扫码添加微信*
-**WeChat ID**: `Kenchen7168`
-</td>
-<td width="50%" align="center">
-**☕ Support Development**
-<img src="https://github.com/xuchenxu168/images/blob/main/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg" width="200" height="200">
-*Scan to buy me a coffee*
-*扫码请我喝咖啡*
-**💝 Every coffee counts!**
-*每一杯咖啡都是支持！*
-</td>
-</tr>
-</table>
+
+If you find ComfyUI Doubao-Seed helpful and it has made your AI content creation projects easier, consider supporting the development!
+
+#### 💝 Your support helps:
+
+- 🚀 **Accelerate new feature development**
+- 🧠 **Enhance AI capabilities**
+- 🔧 **Improve system stability**
+- 📚 **Create better documentation**
+- 🌍 **Support the open-source community**
+
 <div align="center">
-**🙏 Thank you for your support!**
+  <table>
+    <tr>
+      <td align="center" width="50%">
+        <h3>💬 WeChat Contact</h3>
+        <img src="wechat_qrcode.png" alt="微信二维码" width="280"/>
+        <p><em>Scan to add WeChat 扫码添加微信</em></p>
+        <p><strong>WeChat ID: Kenchen7168</strong></p>
+      </td>
+      <td align="center" width="50%">
+        <h3>☕ Support Development</h3>
+        <img src="wechat_pay_qrcode.png" alt="微信收款二维码" width="280"/>
+        <p><em>Scan to buy me a coffee 扫码请我喝咖啡</em></p>
+        <p><strong>💝 Every coffee counts! 每一杯咖啡都是支持！</strong></p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+#### 🙏 Thank you for your support!
+
+*Your contributions, whether through code, feedback, or coffee, make ComfyUI Doubao-Seed better for everyone!*
+
+**谢谢您的支持！无论是代码贡献、反馈建议还是请我喝咖啡，都让ComfyUI Doubao-Seed变得更好！**
+
+---
 
 
+## 🌟 贡献者
 
+感谢所有为这个项目做出贡献的开发者！
+
+<div align="center">
+  <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Ken-Chen/ComfyUI_Doubao_Seed" />
+  </a>
+</div>
+
+---
+
+<div align="center">
+  <p><strong>Made with ❤️ by Ken-Chen</strong></p>
+  <p>© 2024 ComfyUI Doubao-Seed. All rights reserved.</p>
+  <p>
+    <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed">GitHub</a> •
+    <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/issues">Issues</a> •
+    <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/discussions">Discussions</a>
+  </p>
+</div>
