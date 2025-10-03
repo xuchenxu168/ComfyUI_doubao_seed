@@ -1,0 +1,112 @@
+{
+    "api_key": "",
+    "base_url": "https://ai.comfly.chat/v1",
+    "proxy": "None",
+    "default_model": "doubao-seedream-4-0-250828",
+    "timeout": 900,
+    "max_retries": 3,
+    "mirror_sites": {
+        "comfly": {
+            "url": "https://ai.comfly.chat/v1",
+            "api_key": "sk-bXnweb9SnAddPUpI828280750b054b1cB6FbE0378544320e",
+            "api_format": "comfly",
+            "models": ["doubao-seedream-4-0-250828"],
+            "text_models": ["doubao-seed-1-6-250615", "doubao-seed-1-6-flash-250615", "doubao-seed-1-6-flash-250828"],
+            "description": "Comfly官方API，支持SeedReam4.0模型和文本生成，提供最佳性能和稳定性"
+        },
+        "t8_mirror": {
+            "url": "https://ai.t8star.cn/v1",
+            "api_key": "sk-hBhFzjZ6L2V6HKasOcwGLu6bTupl86mzan1Ki1q5TzpJPJeC",
+            "api_format": "openai",
+            "models": ["doubao-seedream-4-0-250828"],
+            "text_models": ["doubao-seed-1-6-250615", "doubao-seed-1-6-flash-250615", "doubao-seed-1-6-flash-250828"],
+            "description": "T8贞贞的AI工坊镜像站，使用OpenAI兼容格式，支持图像生成和文本生成，适合国内用户"
+        },
+        "volcengine": {
+            "url": "https://ark.cn-beijing.volces.com/api/v3",
+            "api_key": "0b78498e-4f56-42cc-991a-27332fa4bd1a",
+            "api_format": "volcengine",
+            "models": ["doubao-seedream-4-0-250828"],
+            "text_models": ["doubao-seed-1-6-250615", "doubao-seed-1-6-flash-250615", "doubao-seed-1-6-flash-250828"],
+            "description": "火山引擎官方API，支持豆包Seedream4.0模型和文本生成，提供企业级稳定性"
+        }
+    },
+    "size_mapping": {
+        "1K": {
+            "1:1": "1024x1024",
+            "4:3": "1152x864",
+            "3:4": "864x1152",
+            "16:9": "1280x720",
+            "9:16": "720x1280",
+            "2:3": "832x1248",
+            "3:2": "1248x832",
+            "21:9": "1512x648",
+            "9:21": "648x1512"
+        },
+        "2K": {
+            "1:1": "2048x2048",
+            "4:3": "2048x1536",
+            "3:4": "1536x2048",
+            "16:9": "2048x1152",
+            "9:16": "1152x2048",
+            "2:3": "1536x2048",
+            "3:2": "2048x1536",
+            "21:9": "2048x864",
+            "9:21": "864x2048"
+        },
+        "4K": {
+            "1:1": "4096x4096",
+            "4:3": "4096x3072",
+            "3:4": "3072x4096",
+            "16:9": "4096x2304",
+            "9:16": "2304x4096",
+            "2:3": "3072x4096",
+            "3:2": "4096x3072",
+            "21:9": "4096x1728",
+            "9:21": "1728x4096"
+        }
+    },
+    "resolution_factors": {
+        "1K": 1,
+        "2K": 2,
+        "4K": 4
+    },
+    "features": {
+        "multi_api_support": true,
+        "mirror_site_failover": true,
+        "custom_resolution": true,
+        "batch_generation": true,
+        "image_input_support": true,
+        "sequential_generation": true,
+        "watermark_control": true,
+        "seed_control": true,
+        "stream_support": true
+    },
+    "limits": {
+        "max_images_per_request": 15,
+        "max_image_size": 8192,
+        "max_prompt_length": 8000,
+        "timeout_seconds": 900
+    },
+    "notes": {
+        "description": "SeedReam4API节点基于ComfyUI_Comfly项目的Doubao Seedream4实现，集成了多家API调用支持",
+        "features": [
+            "支持Comfly、T8、API4GPT、OpenRouter等多种镜像站",
+            "自动故障转移和重试机制",
+            "支持自定义分辨率和宽高比",
+            "支持批量图像生成",
+            "支持图像输入和编辑",
+            "支持顺序图像生成",
+            "支持水印控制和种子控制",
+            "支持流式输出"
+        ],
+        "usage_tips": [
+            "优先使用Comfly官方API获得最佳性能",
+            "镜像站适用于网络受限环境",
+            "自定义分辨率需要选择Custom宽高比",
+            "批量生成时建议使用顺序生成模式",
+            "图像输入支持最多5张图片",
+            "建议设置合适的种子值以获得可重现的结果"
+        ]
+    }
+}
