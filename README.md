@@ -1643,13 +1643,13 @@ If you find ComfyUI Doubao-Seed helpful and it has made your AI content creation
     <tr>
       <td align="center" width="50%">
         <h3>💬 WeChat Contact</h3>
-        <img src="wechat_qrcode.png" alt="微信二维码" width="280"/>
+        <img src="https://github.com/xuchenxu168/images/blob/main/%E5%BE%AE%E4%BF%A1%E5%8F%B7.jpg" alt="微信二维码" width="280"/>
         <p><em>Scan to add WeChat 扫码添加微信</em></p>
         <p><strong>WeChat ID: Kenchen7168</strong></p>
       </td>
       <td align="center" width="50%">
         <h3>☕ Support Development</h3>
-        <img src="wechat_pay_qrcode.png" alt="微信收款二维码" width="280"/>
+        <img src="https://github.com/xuchenxu168/images/blob/main/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg" alt="微信收款二维码" width="280"/>
         <p><em>Scan to buy me a coffee 扫码请我喝咖啡</em></p>
         <p><strong>💝 Every coffee counts! 每一杯咖啡都是支持！</strong></p>
       </td>
@@ -1687,3 +1687,4 @@ If you find ComfyUI Doubao-Seed helpful and it has made your AI content creation
     <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/discussions">Discussions</a>
   </p>
 </div>
+
