@@ -1627,7 +1627,7 @@ python diagnose_comic_parsing.py
 ## 💝 Support the Project
 <div align="center">
 ### ☕ Buy Me a Coffee
-If you find IndexTTS2 helpful and it has made your voice synthesis projects easier, consider supporting the development!
+If you find doubao_seed helpful and it has made your voice synthesis projects easier, consider supporting the development!
 **🎯 Your support helps:**
 - 🚀 Accelerate new feature development
 - 🧠 Enhance AI capabilities
@@ -1656,5 +1656,6 @@ If you find IndexTTS2 helpful and it has made your voice synthesis projects easi
 </table>
 <div align="center">
 **🙏 Thank you for your support!**
+
 
 
