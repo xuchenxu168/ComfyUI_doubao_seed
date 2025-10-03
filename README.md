@@ -1624,77 +1624,37 @@ python diagnose_comic_parsing.py
 
 ---
 
-## 📱 联系方式
-
-### 💬 微信交流
-
-如果您在使用过程中遇到问题，或者有任何建议和想法，欢迎添加微信交流：
-
+## 💝 Support the Project
 <div align="center">
-  <img src="https://github.com/xuchenxu168/images/blob/main/%E5%BE%AE%E4%BF%A1%E5%8F%B7.jpg" alt="微信二维码" width="200"/>
-  <p><strong>扫码添加微信</strong></p>
-  <p>备注：ComfyUI Doubao</p>
+### ☕ Buy Me a Coffee
+If you find IndexTTS2 helpful and it has made your voice synthesis projects easier, consider supporting the development!
+**🎯 Your support helps:**
+- 🚀 Accelerate new feature development
+- 🧠 Enhance AI capabilities
+- 🔧 Improve system stability
+- 📚 Create better documentation
+- 🌍 Support the open-source community
 </div>
-
-**交流内容**：
-- 🔧 技术支持和问题解答
-- 💡 功能建议和需求讨论
-- 📚 使用经验分享
-- 🤝 合作交流
-
----
-
-## 💖 支持项目
-
-如果这个项目对您有帮助，欢迎通过以下方式支持项目的持续开发：
-
-### ⭐ Star支持
-
-给项目一个⭐星标是对我们最大的鼓励！
-
-### 💰 赞赏支持
-
-您的赞赏将用于：
-- 🔧 项目持续维护和更新
-- 📚 文档完善和教程制作
-- 🚀 新功能开发
-- 🌐 服务器和API测试费用
-
+<table>
+<tr>
+<td width="50%" align="center">
+**💬 WeChat Contact**
+<img src="https://github.com/xuchenxu168/images/blob/main/%E5%BE%AE%E4%BF%A1%E5%8F%B7.jpg" alt="WeChat QR Code" width="200" height="200">
+*Scan to add WeChat*
+*扫码添加微信*
+**WeChat ID**: `Kenchen7168`
+</td>
+<td width="50%" align="center">
+**☕ Support Development**
+<img src="https://github.com/xuchenxu168/images/blob/main/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg" width="200" height="200">
+*Scan to buy me a coffee*
+*扫码请我喝咖啡*
+**💝 Every coffee counts!**
+*每一杯咖啡都是支持！*
+</td>
+</tr>
+</table>
 <div align="center">
-  <img src="https://github.com/xuchenxu168/images/blob/main/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg" alt="微信收款二维码" width="200"/>
-  <p><strong>微信赞赏</strong></p>
-  <p>感谢您的支持！</p>
-</div>
+**🙏 Thank you for your support!**
 
-### 🎁 赞赏福利
-
-赞赏用户可获得：
-- ✅ **优先技术支持** - 问题优先解答
-- ✅ **专属交流群** - 加入核心用户群
-- ✅ **新功能抢先体验** - 提前试用新功能
-- ✅ **定制化建议** - 功能定制建议优先考虑
-
----
-
-## 🌟 贡献者
-
-感谢所有为这个项目做出贡献的开发者！
-
-<div align="center">
-  <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=Ken-Chen/ComfyUI_Doubao_Seed" />
-  </a>
-</div>
-
----
-
-<div align="center">
-  <p><strong>Made with ❤️ by Ken-Chen</strong></p>
-  <p>© 2024 ComfyUI Doubao-Seed. All rights reserved.</p>
-  <p>
-    <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed">GitHub</a> •
-    <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/issues">Issues</a> •
-    <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/discussions">Discussions</a>
-  </p>
-</div>
 
