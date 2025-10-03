@@ -8,7 +8,7 @@
     "mirror_sites": {
         "comfly": {
             "url": "https://ai.comfly.chat/v1",
-            "api_key": "sk-bXnweb9SnAddPUpI828280750b054b1cB6FbE0378544320e",
+            "api_key": "",
             "api_format": "comfly",
             "models": ["doubao-seedream-4-0-250828"],
             "text_models": ["doubao-seed-1-6-250615", "doubao-seed-1-6-flash-250615", "doubao-seed-1-6-flash-250828"],
@@ -16,7 +16,7 @@
         },
         "t8_mirror": {
             "url": "https://ai.t8star.cn/v1",
-            "api_key": "sk-hBhFzjZ6L2V6HKasOcwGLu6bTupl86mzan1Ki1q5TzpJPJeC",
+            "api_key": "",
             "api_format": "openai",
             "models": ["doubao-seedream-4-0-250828"],
             "text_models": ["doubao-seed-1-6-250615", "doubao-seed-1-6-flash-250615", "doubao-seed-1-6-flash-250828"],
@@ -24,7 +24,7 @@
         },
         "volcengine": {
             "url": "https://ark.cn-beijing.volces.com/api/v3",
-            "api_key": "0b78498e-4f56-42cc-991a-27332fa4bd1a",
+            "api_key": "",
             "api_format": "volcengine",
             "models": ["doubao-seedream-4-0-250828"],
             "text_models": ["doubao-seed-1-6-250615", "doubao-seed-1-6-flash-250615", "doubao-seed-1-6-flash-250828"],
