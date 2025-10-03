@@ -1631,7 +1631,7 @@ python diagnose_comic_parsing.py
 如果您在使用过程中遇到问题，或者有任何建议和想法，欢迎添加微信交流：
 
 <div align="center">
-  <img src="wechat_qrcode.png" alt="微信二维码" width="200"/>
+  <img src="https://github.com/xuchenxu168/images/blob/main/%E5%BE%AE%E4%BF%A1%E5%8F%B7.jpg" alt="微信二维码" width="200"/>
   <p><strong>扫码添加微信</strong></p>
   <p>备注：ComfyUI Doubao</p>
 </div>
@@ -1661,7 +1661,7 @@ python diagnose_comic_parsing.py
 - 🌐 服务器和API测试费用
 
 <div align="center">
-  <img src="wechat_pay_qrcode.png" alt="微信收款二维码" width="200"/>
+  <img src="https://github.com/xuchenxu168/images/blob/main/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg" alt="微信收款二维码" width="200"/>
   <p><strong>微信赞赏</strong></p>
   <p>感谢您的支持！</p>
 </div>
@@ -1697,3 +1697,4 @@ python diagnose_comic_parsing.py
     <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/discussions">Discussions</a>
   </p>
 </div>
+
