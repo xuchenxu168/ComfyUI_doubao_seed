@@ -1,0 +1,16 @@
+[project]
+name = "ComfyUI_Video_Utilities"
+description = "ComfyUI Video Utilities: A comprehensive collection of video processing nodes for ComfyUI including video stitching, frame extraction, GIF conversion, live video monitoring, and preview capabilities."
+version = "1.2.0"
+license = {file = "LICENSE"}
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Ken-Chen/ComfyUI_Video_Utilities"
+#  Used by Comfy Registry https://registry.comfy.org
+
+[tool.comfy]
+PublisherId = "Ken-Chen"
+DisplayName = "ComfyUI_Video_Utilities"
+Icon = ""
+includes = []
