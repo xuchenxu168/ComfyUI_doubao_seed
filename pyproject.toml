@@ -1,16 +1,17 @@
 [project]
-name = "ComfyUI_Video_Utilities"
-description = "ComfyUI Video Utilities: A comprehensive collection of video processing nodes for ComfyUI including video stitching, frame extraction, GIF conversion, live video monitoring, and preview capabilities."
+name = "ComfyUI_doubao_seed"
+description = "ComfyUI is a collection of custom nodes focused on the Doubao ecosystem of the Volcano Engine, providing comprehensive AI content creation functions such as image generation, video generation, text generation, and comic strip creation.."
 version = "1.2.0"
 license = {file = "LICENSE"}
 dependencies = []
 
 [project.urls]
-Repository = "https://github.com/Ken-Chen/ComfyUI_Video_Utilities"
+Repository = "https://github.com/xuchenxu168/ComfyUI_doubao_seed"
+"Bug Tracker" = "https://github.com/xuchenxu168/ComfyUI_doubao_seed/issues"
 #  Used by Comfy Registry https://registry.comfy.org
 
 [tool.comfy]
-PublisherId = "Ken-Chen"
-DisplayName = "ComfyUI_Video_Utilities"
+PublisherId = "xuchenxu168"
+DisplayName = "ComfyUI_doubao_seed"
 Icon = ""
 includes = []
