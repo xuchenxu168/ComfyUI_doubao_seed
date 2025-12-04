@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI_doubao_seed"
 description = "ComfyUI is a collection of custom nodes focused on the Doubao ecosystem of the Volcano Engine, providing comprehensive AI content creation functions such as image generation, video generation, text generation, and comic strip creation.."
-version = "1.2.0"
+version = "1.6.0"
 license = {file = "LICENSE"}
 dependencies = []
 
