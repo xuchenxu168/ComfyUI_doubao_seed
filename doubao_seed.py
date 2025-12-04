@@ -176,7 +176,7 @@ def get_default_config():
                 "url": "https://ai.comfly.chat/v1",
                 "api_key": "",
                 "api_format": "comfly",
-                "models": ["doubao-seedream-4-0-250828"],
+                "models": ["doubao-seedream-4-0-250828", "doubao-seedream-4-5-251128"],
                 "video_models": ["doubao-seedance-1-0-pro-250528", "doubao-seedance-1-0-lite-i2v-250428", "doubao-seedance-1-0-lite-t2v-250428"],
                 "description": "Comfly官方API，支持SeedReam4.0模型和Seedance视频生成"
             },
@@ -184,7 +184,7 @@ def get_default_config():
                 "url": "https://ai.t8star.cn",
                 "api_key": "",
                 "api_format": "volcengine",
-                "models": ["doubao-seedream-4-0-250828"],
+                "models": ["doubao-seedream-4-0-250828", "doubao-seedream-4-5-251128"],
                 "video_models": ["doubao-seedance-1-0-pro-250528", "doubao-seedance-1-0-lite-i2v-250428", "doubao-seedance-1-0-lite-t2v-250428"],
                 "description": "T8镜像站，使用火山引擎官方格式API"
             },
@@ -192,7 +192,7 @@ def get_default_config():
                 "url": "https://ark.cn-beijing.volces.com",
                 "api_key": "",
                 "api_format": "volcengine",
-                "models": ["doubao-seedream-4-0-250828"],
+                "models": ["doubao-seedream-4-0-250828", "doubao-seedream-4-5-251128"],
                 "video_models": ["doubao-seedance-1-0-pro-250528", "doubao-seedance-1-0-lite-i2v-250428", "doubao-seedance-1-0-lite-t2v-250428"],
                 "description": "火山引擎官方API，支持图像和视频生成"
             }
@@ -295,7 +295,7 @@ def get_mirror_site_config(mirror_site_name: str) -> Dict[str, str]:
         "url": "https://ai.comfly.chat/v1",
         "api_key": "",
         "api_format": "comfly",
-        "models": ["doubao-seedream-4-0-250828"],
+        "models": ["doubao-seedream-4-0-250828", "doubao-seedream-4-5-251128"],
         "video_models": ["doubao-seedance-1-0-pro-250528", "doubao-seedance-1-0-lite-i2v-250428", "doubao-seedance-1-0-lite-t2v-250428"],
         "description": "默认Comfly配置"
     }
@@ -1532,7 +1532,7 @@ class SeedReam4APINode:
             "required": {
                 "prompt": ("STRING", {"multiline": True, "default": "A beautiful landscape"}),
                 "mirror_site": (mirror_options, {"default": mirror_options[0]}),
-                "model": (["doubao-seedream-4-0-250828"], {"default": "doubao-seedream-4-0-250828"}),
+                "model": (["doubao-seedream-4-0-250828", "doubao-seedream-4-5-251128 (不支持1K)"], {"default": "doubao-seedream-4-0-250828"}),
                 "response_format": (["url", "b64_json"], {"default": "url"}),
                 "resolution": (["1K", "2K", "4K"], {"default": "1K"}),
                 "aspect_ratio": (["1:1", "4:3", "3:4", "16:9", "9:16", "2:3", "3:2", "21:9", "9:21", "Custom"], {"default": "1:1"}),
@@ -1551,6 +1551,15 @@ class SeedReam4APINode:
                 "image3": ("IMAGE",),
                 "image4": ("IMAGE",),
                 "image5": ("IMAGE",),
+                "image6": ("IMAGE",),
+                "image7": ("IMAGE",),
+                "image8": ("IMAGE",),
+                "image9": ("IMAGE",),
+                "image10": ("IMAGE",),
+                "image11": ("IMAGE",),
+                "image12": ("IMAGE",),
+                "image13": ("IMAGE",),
+                "image14": ("IMAGE",),
                 "sequential_image_generation": (["disabled", "auto"], {"default": "disabled"}),
             }
         }
@@ -1578,12 +1587,20 @@ class SeedReam4APINode:
                       aspect_ratio="1:1", width=1024, height=1024, api_key="",
                       max_images=1, seed=-1, watermark=True, stream=False, tail_on_partial=True,
                       image1=None, image2=None, image3=None, image4=None, image5=None,
+                      image6=None, image7=None, image8=None, image9=None, image10=None,
+                      image11=None, image12=None, image13=None, image14=None,
                       sequential_image_generation="disabled"):
         """生成图像"""
         
         # 获取镜像站配置
         site_config = get_mirror_site_config(mirror_site)
         api_url = site_config.get("url", "").strip()
+        api_url = api_url.replace("`", "").strip()
+        if api_url.endswith(")"):
+            api_url = api_url[:-1].strip()
+        api_url = api_url.replace("`", "").strip()
+        if api_url.endswith(")"):
+            api_url = api_url[:-1].strip()
         api_format = site_config.get("api_format", "comfly")
         
         # 使用镜像站的API key（如果提供了的话）
@@ -1603,6 +1620,17 @@ class SeedReam4APINode:
             blank_tensor = create_blank_tensor()
             return (blank_tensor, error_message, "")
         
+        # 清理模型名称中的提示信息
+        if " (" in model:
+            model = model.split(" (")[0]
+
+
+        # 检查模型和分辨率兼容性
+        if model == "doubao-seedream-4-5-251128" and resolution == "1K":
+            warning_message = "⚠️ 警告：模型 doubao-seedream-4-5-251128 不支持 1K 分辨率，可能会导致生成失败或自动调整。"
+            _log_warning(warning_message)
+            # 这里我们不阻止执行，因为API可能会自动处理，但我们给出了提示
+            
         _log_info(f"🔗 使用镜像站: {mirror_site} ({api_url})")
         
         try:
@@ -1633,6 +1661,7 @@ class SeedReam4APINode:
             
             if sequential_image_generation == "auto":
                 payload["sequential_image_generation"] = sequential_image_generation
+                payload["sequential_image_generation_options"] = {"max_images": max_images}
                 payload["n"] = max_images
                 
             if seed != -1:
@@ -1640,7 +1669,7 @@ class SeedReam4APINode:
             
             # 处理输入图像
             image_urls = []
-            for img in [image1, image2, image3, image4, image5]:
+            for img in [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14]:
                 if img is not None:
                     batch_size = img.shape[0]
                     for i in range(batch_size):
@@ -1651,6 +1680,11 @@ class SeedReam4APINode:
             
             if image_urls:
                 payload["image"] = image_urls
+                if sequential_image_generation == "auto":
+                    remaining = max(0, 15 - len(image_urls))
+                    if remaining < max_images:
+                        payload["sequential_image_generation_options"] = {"max_images": remaining}
+                        payload["n"] = remaining
             
             # 根据API格式调用相应的API
             response = None
@@ -1917,7 +1951,7 @@ class SeedReam4APISingleNode:
             "required": {
                 "prompt": ("STRING", {"multiline": True, "default": "A beautiful landscape"}),
                 "mirror_site": (mirror_options, {"default": mirror_options[0]}),
-                "model": (["doubao-seedream-4-0-250828"], {"default": "doubao-seedream-4-0-250828"}),
+                "model": (["doubao-seedream-4-0-250828", "doubao-seedream-4-5-251128 (不支持1K)"], {"default": "doubao-seedream-4-0-250828"}),
                 "response_format": (["url", "b64_json"], {"default": "url"}),
                 "resolution": (["1K", "2K", "4K"], {"default": "1K"}),
                 "aspect_ratio": (["1:1", "4:3", "3:4", "16:9", "9:16", "2:3", "3:2", "21:9", "9:21", "Custom"], {"default": "1:1"}),
@@ -1983,6 +2017,16 @@ class SeedReam4APISingleNode:
             blank_tensor = create_blank_tensor()
             return (blank_tensor, error_message, "")
         
+        # 清理模型名称中的提示信息
+        if " (" in model:
+            model = model.split(" (")[0]
+
+
+        # 检查模型和分辨率兼容性
+        if model == "doubao-seedream-4-5-251128" and resolution == "1K":
+            warning_message = "⚠️ 警告：模型 doubao-seedream-4-5-251128 不支持 1K 分辨率，可能会导致生成失败或自动调整。"
+            _log_warning(warning_message)
+        
         _log_info(f"🔗 使用镜像站: {mirror_site} ({api_url})")
         
         try:
@@ -2013,6 +2057,7 @@ class SeedReam4APISingleNode:
             
             if sequential_image_generation == "auto":
                 payload["sequential_image_generation"] = sequential_image_generation
+                payload["sequential_image_generation_options"] = {"max_images": max_images}
                 payload["n"] = max_images
                 
             if seed != -1:
@@ -5955,7 +6000,7 @@ class DoubaoComicBookNode:
                 "story_prompt": ("STRING", {"multiline": True, "default": "一个关于小兔子冒险的温馨故事"}),
                 "mirror_site": (mirror_options, {"default": mirror_options[0]}),
                 "text_model": (["doubao-seed-1-6-250615", "doubao-seed-1-6-flash-250615", "doubao-seed-1-6-flash-250828"], {"default": "doubao-seed-1-6-250615"}),
-                "image_model": (["doubao-seedream-4-0-250828"], {"default": "doubao-seedream-4-0-250828"}),
+                "image_model": (["doubao-seedream-4-0-250828", "doubao-seedream-4-5-251128 (不支持1K)"], {"default": "doubao-seedream-4-0-250828"}),
                 "story_length": (["short", "medium", "long"], {"default": "medium"}),
                 "image_style": (["realistic", "cartoon", "anime", "watercolor", "sketch"], {"default": "cartoon"}),
                 "resolution": (["1K", "2K", "4K"], {"default": "2K"}),
@@ -5976,10 +6021,15 @@ class DoubaoComicBookNode:
                 "reference_image_8": ("IMAGE",),  # 参考图片8
                 "reference_image_9": ("IMAGE",),  # 参考图片9
                 "reference_image_10": ("IMAGE",),  # 参考图片10
+                "reference_image_11": ("IMAGE",),  # 参考图片11
+                "reference_image_12": ("IMAGE",),  # 参考图片12
+                "reference_image_13": ("IMAGE",),  # 参考图片13
+                "reference_image_14": ("IMAGE",),  # 参考图片14
                 "character_description": ("STRING", {"multiline": True, "default": ""}),
                 "background_style": ("STRING", {"multiline": True, "default": ""}),
                 "story_theme": ("STRING", {"multiline": True, "default": ""}),
                 "sequential_generation": (["disabled", "auto"], {"default": "auto"}),
+                "reference_mode": (["single_per_scene", "multi_fusion"], {"default": "single_per_scene"}),
             }
         }
 
@@ -5998,10 +6048,11 @@ class DoubaoComicBookNode:
 
     def create_comic_book(self, story_prompt, mirror_site="comfly", text_model="doubao-seed-1-6-250615", 
                          image_model="doubao-seedream-4-0-250828", story_length="medium", image_style="cartoon",
-                         resolution="2K", aspect_ratio="4:3", api_key="", max_tokens=2000, temperature=0.8,
+                         reference_mode="single_per_scene", resolution="2K", aspect_ratio="4:3", api_key="", max_tokens=2000, temperature=0.8,
                          reference_images=None, reference_image_2=None, reference_image_3=None, reference_image_4=None,
                          reference_image_5=None, reference_image_6=None, reference_image_7=None, reference_image_8=None,
-                         reference_image_9=None, reference_image_10=None, character_description="", background_style="",
+                         reference_image_9=None, reference_image_10=None, reference_image_11=None, reference_image_12=None,
+                         reference_image_13=None, reference_image_14=None, character_description="", background_style="",
                          story_theme="", watermark=False, sequential_generation="auto"):
         """
         创建连环画故事书
@@ -6030,6 +6081,17 @@ class DoubaoComicBookNode:
         """
         try:
             _log_info("📚 开始创作连环画故事书...")
+            
+            # 清理模型名称中的提示信息
+            if " (" in image_model:
+                image_model = image_model.split(" (")[0]
+
+
+            # 检查模型和分辨率兼容性
+            if image_model == "doubao-seedream-4-5-251128" and resolution == "1K":
+                warning_message = "⚠️ 警告：模型 doubao-seedream-4-5-251128 不支持 1K 分辨率，可能会导致生成失败或自动调整。"
+                _log_warning(warning_message)
+
             _log_info(f"📝 故事提示: {story_prompt[:100]}...")
             _log_info(f"🎨 图像风格: {image_style}, 分辨率: {resolution}")
 
@@ -6037,7 +6099,8 @@ class DoubaoComicBookNode:
             all_reference_images = self._collect_reference_images(
                 reference_images, reference_image_2, reference_image_3, reference_image_4,
                 reference_image_5, reference_image_6, reference_image_7, reference_image_8,
-                reference_image_9, reference_image_10
+                reference_image_9, reference_image_10, reference_image_11, reference_image_12,
+                reference_image_13, reference_image_14
             )
             _log_info(f"🖼️ 收集到 {len(all_reference_images)} 张参考图片")
 
@@ -6087,8 +6150,8 @@ class DoubaoComicBookNode:
                 
                 # 生成场景图像
                 scene_image = self._generate_scene_image(
-                    scene, mirror_site, image_model, image_style, 
-                    resolution, aspect_ratio, all_reference_images, 
+                    scene, mirror_site, image_model, image_style,
+                    resolution, aspect_ratio, all_reference_images, reference_mode,
                     watermark, api_key, i
                 )
                 
@@ -6384,7 +6447,7 @@ JSON格式要求：
             return []
 
     def _generate_scene_image(self, scene, mirror_site, image_model, image_style, 
-                             resolution, aspect_ratio, reference_images, watermark, api_key, scene_index=0):
+                             resolution, aspect_ratio, reference_images, reference_mode, watermark, api_key, scene_index=0):
         """生成场景图像"""
         for attempt in range(self.max_retries):
             try:
@@ -6400,17 +6463,35 @@ JSON格式要求：
                     _log_info(f"🎨 使用参考图片 {scene_index % len(reference_images) + 1}/{len(reference_images)}")
                 
                 # 调用图像生成API
-                image_node = SeedReam4APISingleNode()
-                generated_image, _, _ = image_node.generate_image(
-                    prompt=image_prompt,
-                    mirror_site=mirror_site,
-                    model=image_model,
-                    resolution=resolution,
-                    aspect_ratio=aspect_ratio,
-                    api_key=api_key,
-                    watermark=watermark,
-                    image=selected_reference
-                )
+                if reference_mode == "multi_fusion" and reference_images and len(reference_images) > 0:
+                    image_node = SeedReam4APINode()
+                    kwargs = {}
+                    for idx, img in enumerate(reference_images[:14]):
+                        kwargs[f"image{idx+1}"] = img
+                    generated_image, _, _ = image_node.generate_image(
+                        prompt=image_prompt,
+                        mirror_site=mirror_site,
+                        model=image_model,
+                        resolution=resolution,
+                        aspect_ratio=aspect_ratio,
+                        api_key=api_key,
+                        watermark=watermark,
+                        sequential_image_generation="disabled",
+                        max_images=1,
+                        **kwargs
+                    )
+                else:
+                    image_node = SeedReam4APISingleNode()
+                    generated_image, _, _ = image_node.generate_image(
+                        prompt=image_prompt,
+                        mirror_site=mirror_site,
+                        model=image_model,
+                        resolution=resolution,
+                        aspect_ratio=aspect_ratio,
+                        api_key=api_key,
+                        watermark=watermark,
+                        image=selected_reference
+                    )
                 
                 if generated_image is not None:
                     _log_info("✅ 场景图像生成成功")
