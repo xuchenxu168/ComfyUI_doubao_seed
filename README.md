@@ -165,6 +165,7 @@
   - `doubao-seed-1-6-flash-250828`: 最新快速版
 - `image_model` (选择): 图像生成模型
   - `doubao-seedream-4-0-250828`: 最新版（推荐）
+  - `doubao-seedream-4-5-251128`: 4.5版本 (注意：不支持1K分辨率)
 - `watermark` (BOOLEAN): 是否添加水印（默认：True）
 
 **输出内容**：
@@ -1643,13 +1644,13 @@ If you find ComfyUI Doubao-Seed helpful and it has made your AI content creation
     <tr>
       <td align="center" width="50%">
         <h3>💬 WeChat Contact</h3>
-        <img src="https://github.com/xuchenxu168/images/blob/main/%E5%BE%AE%E4%BF%A1%E5%8F%B7.jpg" alt="微信二维码" width="280"/>
+        <img src="wechat_qrcode.png" alt="微信二维码" width="280"/>
         <p><em>Scan to add WeChat 扫码添加微信</em></p>
         <p><strong>WeChat ID: Kenchen7168</strong></p>
       </td>
       <td align="center" width="50%">
         <h3>☕ Support Development</h3>
-        <img src="https://github.com/xuchenxu168/images/blob/main/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg" alt="微信收款二维码" width="280"/>
+        <img src="wechat_pay_qrcode.png" alt="微信收款二维码" width="280"/>
         <p><em>Scan to buy me a coffee 扫码请我喝咖啡</em></p>
         <p><strong>💝 Every coffee counts! 每一杯咖啡都是支持！</strong></p>
       </td>
@@ -1687,4 +1688,3 @@ If you find ComfyUI Doubao-Seed helpful and it has made your AI content creation
     <a href="https://github.com/Ken-Chen/ComfyUI_Doubao_Seed/discussions">Discussions</a>
   </p>
 </div>
-
